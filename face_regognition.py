@@ -42,7 +42,9 @@ while True:
         "My Face Detection Project", video_frame
     )  # display the processed frame in a window named "My Face Detection Project"
 
-    if cv2.waitKey(1) & 0xFF == ord("q"):
+    # Check if 'q' or 'Escape' key is pressed
+    key = cv2.waitKey(1) & 0xFF
+    if key == ord("q") or key == 27:  # 27 is the ASCII code for the Escape key
         break
 
 video_capture.release()
